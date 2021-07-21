@@ -1,5 +1,5 @@
 pipeline {
-	agent {label 'git2'} 
+	agent
 	stages {
 		stage('BUILD') {
 			steps {
