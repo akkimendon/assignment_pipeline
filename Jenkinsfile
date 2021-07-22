@@ -1,6 +1,7 @@
 pipeline {
 	agent any
 	stages {
+		stage1 {
 		parallel {
 		stage('BUILD') {
 			steps {
@@ -30,6 +31,7 @@ pipeline {
 					echo This is the fist stage: DEPLOY
 				'''
 			}	
+		}
 		}
 		}
 	}
