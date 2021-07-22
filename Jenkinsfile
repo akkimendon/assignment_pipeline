@@ -12,13 +12,21 @@ pipeline {
 		}
 		
 		stage('TEST') {
+			parallel {
+			stage('one') {
 			steps {
-				sh '''
-					pwd
-					sleep 5
-					echo This is the fist stage: TEST
-				'''
-			}	
+				sh 'pwd'
+			}
+			stage('two') {
+			steps {
+				sh 'ls'
+			}
+			}
+			}
+		}
+		}
+
+
 		}
 		
 		stage('DEPLOY') {
